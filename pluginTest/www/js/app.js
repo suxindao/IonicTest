@@ -20,6 +20,15 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'starter.controllers']
                 if (window.StatusBar) {
                     StatusBar.styleDefault();
                 }
+
+                //add push notifications,
+                var push = new Ionic.Push({
+                    "debug": true
+                });
+
+                push.register(function (token) {
+                    console.log("Device token:", token.token);
+                });
             });
         })
         .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
