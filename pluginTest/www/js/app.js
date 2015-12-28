@@ -56,7 +56,6 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'starter.controllers']
                     })
 
                     // Each tab has its own nav history stack:
-
                     .state('tab.analytics', {
                         url: '/analytics',
                         views: {

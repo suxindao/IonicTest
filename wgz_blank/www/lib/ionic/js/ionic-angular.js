@@ -2691,7 +2691,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     }
   };
 
-  return {
+  return 
     /**
      * @ngdoc method
      * @name $ionicModal#fromTemplate
