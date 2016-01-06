@@ -1,0 +1,167 @@
+{
+    "elements": {
+        "ion-nav-title": {},
+        "ion-side-menus": {
+            "attributes": {
+                "delegate-handle": {},
+                "enable-menu-with-back-views": {}
+            }
+        },
+        "ion-slide-pager": {
+            "attributes": {
+                "ng-click": {}
+            }
+        },
+        "ion-refresher": {
+            "attributes": {
+                "on-pulling": {},
+                "pulling-icon": {},
+                "pulling-text": {},
+                "disable-pulling-rotation": {},
+                "on-refresh": {},
+                "refreshing-icon": {},
+                "spinner": {}
+            }
+        },
+        "ion-reorder-button": {},
+        "ion-slide-box": {},
+        "ion-nav-bar": {
+            "attributes": {
+                "align-title": {},
+                "no-tap-scroll": {},
+                "class": {},
+                "delegate-handle": {}
+            }
+        },
+        "ion-side-menu": {
+            "attributes": {
+                "side": {},
+                "width": {},
+                "is-enabled": {}
+            }
+        },
+        "ion-list": {
+            "attributes": {
+                "can-swipe": {},
+                "show-delete": {},
+                "show-reorder": {},
+                "type": {},
+                "delegate-handle": {}
+            }
+        },
+        "ion-delete-button": {},
+        "ion-nav-view": {
+            "attributes": {
+                "name": {}
+            }
+        },
+        "ion-nav-buttons": {
+            "attributes": {
+                "side": {}
+            }
+        },
+        "ion-modal-view": {},
+        "ion-nav-transition": {},
+        "ion-infinite-scroll": {
+            "attributes": {
+                "on-infinite": {},
+                "immediate-check": {},
+                "distance": {},
+                "icon": {},
+                "spinner": {}
+            }
+        },
+        "ion-slide": {},
+        "ion-pane": {},
+        "ion-checkbox": {},
+        "ion-view": {
+            "attributes": {
+                "hide-back-button": {},
+                "view-title": {},
+                "hide-nav-bar": {},
+                "cache-view": {}
+            }
+        },
+        "ion-side-menu-content": {
+            "attributes": {
+                "drag-content": {},
+                "edge-drag-threshold": {}
+            }
+        },
+        "ion-header-bar": {
+            "attributes": {
+                "align-title": {},
+                "no-tap-scroll": {}
+            }
+        },
+        "ion-scrool": {
+            "attributes": {
+                "on-scroll": {},
+                "locking": {},
+                "min-zoom": {},
+                "max-zoom": {},
+                "paging": {},
+                "on-refresh": {},
+                "has-bouncing": {},
+                "scrollbar-y": {},
+                "delegate-handle": {},
+                "zooming": {},
+                "direction": {},
+                "scrollbar-x": {}
+            }
+        },
+        "ion-popover-view": {},
+        "ion-radio": {},
+        "ion-footer-bar": {
+            "attributes": {
+                "align-title": {}
+            }
+        },
+        "ion-tab": {
+            "attributes": {
+                "badge": {},
+                "on-deselect": {},
+                "hidden": {},
+                "ng-click": {},
+                "icon": {},
+                "badge-style": {},
+                "icon-off": {},
+                "disabled": {},
+                "href": {},
+                "title": {},
+                "icon-on": {},
+                "on-select": {}
+            }
+        },
+        "ion-content": {
+            "attributes": {
+                "overflow-scroll": {},
+                "start-y": {},
+                "start-x": {},
+                "locking": {},
+                "scroll": {},
+                "scrollbar-y": {},
+                "delegate-handle": {},
+                "scrollbar-x": {},
+                "on-scroll": {},
+                "on-scroll-complete": {},
+                "scroll-event-interval": {},
+                "has-bouncing": {},
+                "padding=": {},
+                "direction": {}
+            }
+        },
+        "ion-nav-back-button": {},
+        "ion-nav-direction": {},
+        "ion-item": {},
+        "ion-tabs": {
+            "attributes": {
+                "delegate-handle": {}
+            }
+        },
+        "ion-toggle": {},
+        "ion-option-button": {},
+        "ion-spinner": {}
+    },
+    "attributes": {}
+}
