@@ -1,6 +1,21 @@
 angular.module('starter.controllers', [])
 
+        .controller('HomeCtrl', function ($scope, $state) {
+            $scope.search = {};
+            $scope.getResult = function (keyword) {
+                $state.go("result", {keyword: keyword});
+            };
+        })
+
         .controller('DashCtrl', function ($scope) {})
+
+        .controller('ResultCtrl', function ($scope, $state, $stateParams) {
+            var keyword = $stateParams.keyword;
+            
+            $scope.goHome = function () {
+                $state.go("tab.home");
+            };
+        })
 
         .controller('ChatsCtrl', function ($scope, Chats) {
             // With the new view caching in Ionic, Controllers are only called
@@ -12,7 +27,7 @@ angular.module('starter.controllers', [])
             //});
 
             $scope.chats = Chats.all();
-            
+
             $scope.remove = function (chat) {
                 Chats.remove(chat);
             };
