@@ -1,16 +1,20 @@
 <ion-view view-title="查询结果页">
     <ion-nav-buttons side="left">
-        <button class="button icon-left ion-home" ng-click="goHome()">
-            首页
-        </button>
+        <button class="button icon-left ion-home" ng-click="goHome()">返回</button>
     </ion-nav-buttons>
-    <div class="list">
-        <div class="item item-divider">共有 5000+ 个相关职位，目前显示前 10 个</div>
-        <div class="item item-body">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item item-divider">共有 {{resultItems.total}}+ 个相关职位，目前显示前 10 个</ion-item>
+            <ion-item ng-repeat="item in resultItems.jobs">
+                <p>{{item.title}}</p>
+                <p>{{item.company}}</p>
+                <p>{{item.salary}}</p>
+                <ion-option-button class="button-calm icon ion-edit"></ion-option-button>
+                <ion-option-button class="button-energized icon ion-share"></ion-option-button>
+            </ion-item>
+        </ion-list>
+        <div class="padding-left padding-right">
+            <button class="button button-block button-positive" ng-click="getMore();">查看更多</button>
         </div>
-    </div>
-    <div class="padding-left padding-right">
-        <button class="button button-block button-positive" ng-click="getMore();">查看更多</button>
-    </div>
-</ion-content>
+    </ion-content>
 </ion-view>

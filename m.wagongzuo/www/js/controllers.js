@@ -9,9 +9,22 @@ angular.module('starter.controllers', [])
 
         .controller('DashCtrl', function ($scope) {})
 
-        .controller('ResultCtrl', function ($scope, $state, $stateParams) {
+        .controller('ResultCtrl', function ($scope, $state, $stateParams, $ionicLoading, AjaxRequest) {
+            $scope.resultItems = {};
             var keyword = $stateParams.keyword;
-            
+//            $scope.resultItems = GjResult.search(keyword);
+//            alert("jobs:" + $scope.resultItems.jobs.length);
+
+            $ionicLoading.show({
+                template: "正在载入数据，请稍后..."
+            });
+            AjaxRequest.getResultList(keyword).success(function (response, status) {
+                $scope.resultItems = response;
+                $ionicLoading.hide();
+            }).error(function (response, status) {
+
+            });
+
             $scope.goHome = function () {
                 $state.go("tab.home");
             };
