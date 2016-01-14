@@ -1,0 +1,29 @@
+<ion-view view-title="挖工作首页">
+    <ion-content>
+        <ion-slide-box does-continue="true" auto-play="true" show-pager="true">
+            <ion-slide>
+                <div class="box positive-bg index_slide"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box energized-bg index_slide"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box balanced-bg index_slide"></div>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="list">
+            <div class="item item-divider">共有职位 5,464,039 个，最近7天更新职位 80,750 个</div>
+            <div class="item item-body">
+                <div>
+                    <label class="item-input">
+                        <span class="input-label">关键字</span>
+                        <input type="text" ng-model="search.keyword" placeholder="职位关键字，例如：php">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left padding-right">
+            <button class="button button-block button-positive" ng-click="getResult(search.keyword)">查找</button>
+        </div>
+    </ion-content>
+</ion-view>
