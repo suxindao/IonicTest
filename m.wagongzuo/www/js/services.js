@@ -3,15 +3,14 @@ angular.module('starter.services', ['ionic'])
         .factory('AjaxRequest', function ($http) {
             var requestURL;
             return {
-                getResultList: function (keyword) {
-                    keyword = keyword || "php";
-                    requestURL = "http://search.wagongzuo.com:8080/api/search?jsonpcallback=JSON_CALLBACK&keyword=" + keyword;
+                getResultList: function (keyword, page) {
+                    requestURL = "http://search.wagongzuo.com:8080/api/search?jsonpcallback=JSON_CALLBACK&keyword=" + keyword + "&page=" + page;
                     return $http.jsonp(requestURL);
                 },
                 getJobDetail: function (jid, cid) {
                     jid = jid || 1;
                     cid = cid || 1;
-                    requestURL = "http://m.wagongzuo.com/job/info/jid/" + jid + "/cid/" + cid;
+                    requestURL = "http://www.wagongzuo.com/job/info-ajax?jsonpcallback=JSON_CALLBACK&jid=" + jid + "&cid=" + cid;
                     return $http.jsonp(requestURL);
                 }
             };

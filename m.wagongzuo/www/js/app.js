@@ -110,6 +110,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                         controller: 'ResultCtrl'
                     })
 
+                    .state('jinfo', {
+                        url: '/jinfo/jid/:jid/cid/:cid',
+                        templateUrl: 'templates/jinfo.html',
+                        controller: 'JobInfoCtrl'
+                    })
+
                     .state('home', {
                         url: '/home',
                         views: {

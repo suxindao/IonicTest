@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
         .controller('HomeCtrl', function ($scope, $state) {
             $scope.search = {};
@@ -9,25 +9,73 @@ angular.module('starter.controllers', [])
 
         .controller('DashCtrl', function ($scope) {})
 
-        .controller('ResultCtrl', function ($scope, $state, $stateParams, $ionicLoading, AjaxRequest) {
-            $scope.resultItems = {};
-            var keyword = $stateParams.keyword;
+        .controller('ResultCtrl', function ($scope, $state, $stateParams, $ionicLoading, $ionicHistory, AjaxRequest) {
+//            $scope.resultItems = {};
+            var keyword = $stateParams.keyword || "php", page = 1;
 //            $scope.resultItems = GjResult.search(keyword);
 //            alert("jobs:" + $scope.resultItems.jobs.length);
 
+            //获取结果列表
             $ionicLoading.show({
                 template: "正在载入数据，请稍后..."
             });
-            AjaxRequest.getResultList(keyword).success(function (response, status) {
+            AjaxRequest.getResultList(keyword, page).success(function (response, status) {
                 $scope.resultItems = response;
                 $ionicLoading.hide();
             }).error(function (response, status) {
 
             });
 
+            $scope.getMore = function () {
+                page++;
+                $ionicLoading.show({
+                    template: "正在载入数据，请稍后..."
+                });
+                AjaxRequest.getResultList(keyword, page).success(function (response, status) {
+                    $scope.resultItems.jobs = $scope.resultItems.jobs.concat(response.jobs);
+                    $ionicLoading.hide();
+                }).error(function (response, status) {
+
+                });
+            }
+
+            //跳转至Job detail页面
+            $scope.detail = function (jid, cid) {
+                $state.go("jinfo", {jid: jid, cid: cid});
+            }
+
             $scope.goHome = function () {
-                $state.go("tab.home");
+//                $state.go("tab.home");
+//                var h = $ionicHistory.viewHistory();
+                $ionicHistory.goBack();
             };
+        })
+
+        .controller('JobInfoCtrl', function ($scope, $state, $stateParams, $ionicLoading, $ionicTabsDelegate, AjaxRequest) {
+            var jid = $stateParams.jid,
+                    cid = $stateParams.cid;
+
+            //获取结果列表
+            $ionicLoading.show({
+                template: "正在载入数据，请稍后..."
+            });
+            AjaxRequest.getJobDetail(jid, cid).success(function (response, status) {
+                if (response.success === true) {
+                    $scope.jinfo = response.jobinfo;
+                }
+                $ionicLoading.hide();
+            }).error(function (response, status) {
+
+            });
+
+            $scope.onSwipeRight = function () {
+                $ionicTabsDelegate.select(0);
+            };
+
+            $scope.onSwipeLeft = function () {
+                $ionicTabsDelegate.select(1);
+            };
+
         })
 
         .controller('ChatsCtrl', function ($scope, Chats) {
