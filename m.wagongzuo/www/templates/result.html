@@ -19,24 +19,24 @@
     </ion-content>
 </ion-view>-->
 <ion-view view-title="查询结果页">
-    <ion-nav-buttons side="left">
-        <button class="button icon-left ion-android-arrow-back" ng-click="goHome()"></button>
-    </ion-nav-buttons>
-    <ion-content>
-        <ion-list>
-            <ion-item class="item item-divider">共有 {{resultItems.total}}+ 个相关职位，目前显示前 10 个</ion-item>
-            <ion-item ng-repeat="item in resultItems.jobs" href="#/jinfo/jid/{{item.jid}}/cid/{{item.cid}}">
-                <p>{{item.title}}</p>
-                <p>{{item.company}}</p>
-                <p>{{item.salary}}</p>
-                <ion-option-button class="button-calm icon ion-edit"></ion-option-button>
-                <ion-option-button class="button-energized icon ion-share"></ion-option-button>
-            </ion-item>
-            <!--        <ion-infinite-scroll on-infinite="load_more();">
+  <ion-nav-buttons side="left">
+    <button class="button icon-left ion-android-arrow-back" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-divider">共有 {{resultItems.total}}+ 个相关职位，目前显示前 10 个</ion-item>
+      <ion-item ng-repeat="item in resultItems.jobs" href="#/jinfo/jid/{{item.jid}}/cid/{{item.cid}}">
+        <p>{{item.title}}</p>
+        <p>{{item.company}}</p>
+        <p>{{item.salary}}</p>
+        <ion-option-button class="button-calm icon ion-edit"></ion-option-button>
+        <ion-option-button class="button-energized icon ion-share"></ion-option-button>
+      </ion-item>
+      <!--        <ion-infinite-scroll on-infinite="load_more();">
                     </ion-infinite-scroll>-->
-            <ion-item>
-                <button class="button button-block button-positive" ng-click="getMore();">查看更多</button>
-            </ion-item>
-        </ion-list>
-    </ion-content>
+      <ion-item>
+        <button class="button button-block button-positive" ng-click="getMore();">查看更多</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>
